@@ -1,0 +1,79 @@
+<!DOCTYPE html> <!-- This declares the document as HTML5 -->
+<html lang="en"> <!-- Root element of the page; 'lang' helps accessibility tools -->
+
+  <head>
+    <meta charset="utf-8"> <!-- Ensures proper character encoding (UTF-8 covers most characters & symbols) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page mobile-friendly -->
+    <title>Campus Media Gallery</title> <!-- Title that appears in the browser tab -->
+  </head>
+
+  <body>
+    <!-- ================= Header Section ================= -->
+    <header>
+      <h1>🎥 Campus Media Gallery</h1> <!-- Main heading of the page -->
+      <p>This page demonstrates <strong>video</strong>, <strong>audio</strong>, and <strong>subtitles</strong> in HTML.</p>
+    </header>
+
+    <!-- ================= VIDEO (with poster, controls, multiple sources, fallback) ================= -->
+    <section>
+      <h2>Video Demo (Multiple Formats + Poster)</h2>
+
+      <!-- The <video> element embeds a video file -->
+      <!-- 'controls' adds play/pause UI; 'poster' shows an image before play; 'width' sets video display size -->
+      <video controls width="480" poster="images/poster.png">
+        <!-- Multiple <source> elements: browser plays the first format it supports -->
+        <source src="media/sample.mp4" type="video/mp4">
+        <source src="media/sample.webm" type="video/webm">
+        <!-- Fallback text if the browser does not support <video> -->
+        Sorry, your browser doesn’t support the HTML5 <code>video</code> element.
+      </video>
+    </section>
+
+    <!-- ================= VIDEO (autoplay, muted, loop) ================= -->
+    <section>
+      <h2>Silent Autoplay Loop (for banners)</h2>
+
+      <!-- 'autoplay' starts automatically, 'muted' is required for autoplay in most browsers, 'loop' repeats the video -->
+      <video autoplay muted loop width="320" poster="images/poster.png">
+        <source src="media/sample.webm" type="video/webm">
+        <source src="media/sample.mp4" type="video/mp4">
+        Sorry, your browser doesn’t support HTML5 video.
+      </video>
+    </section>
+
+    <!-- ================= AUDIO ================= -->
+    <section>
+      <h2>Audio Demo (Multiple Formats)</h2>
+
+      <!-- The <audio> element works like <video> but only plays sound -->
+      <!-- 'controls' adds play/pause buttons; audio doesn’t support 'poster' or size attributes -->
+      <audio controls>
+        <source src="media/sample.mp3" type="audio/mpeg">
+        <source src="media/sample.ogg" type="audio/ogg">
+        <!-- Fallback text if the browser does not support <audio> -->
+        Sorry, your browser doesn’t support the HTML5 <code>audio</code> element.
+      </audio>
+    </section>
+
+    <!-- ================= VIDEO with Subtitles ================= -->
+    <section>
+      <h2>Video with Subtitles (VTT)</h2>
+
+      <!-- Adding subtitles using <track> with a .vtt file -->
+      <video controls width="480">
+        <source src="media/sample.mp4" type="video/mp4">
+        <!-- 'track' defines captions/subtitles. 'kind' = type, 'srclang' = language, 'label' = menu label -->
+        <track src="media/subtitles.vtt" kind="subtitles" srclang="en" label="English">
+        Sorry, your browser doesn’t support HTML5 video.
+      </video>
+    </section>
+
+    <!-- ================= Footer ================= -->
+    <footer>
+      <hr> <!-- Horizontal line for separation -->
+      <p>&copy; 2025 Campus Media Gallery • Validate your HTML at the 
+        <a href="https://validator.w3.org" target="_blank" rel="noopener">W3C Validator</a>
+      </p>
+    </footer>
+  </body>
+</html>
